@@ -9,7 +9,7 @@ defmodule Activio.Activity do
     Map.has_key?(activity.participants, user)
   end
 
-  def set_teams_size(activity, 0) do
+  def set_teams_size(activity, size) when size <= 0 do
     {:error, "Can't set teams size below 1"}
   end
 
